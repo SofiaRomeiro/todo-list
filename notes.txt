@@ -1,0 +1,63 @@
+
+/*
+
+const useStyles = makeStyles(() => ({
+  root: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: "white"
+  }
+}));
+
+const CheckboxListSecondary = (tasks) => {
+  const classes = useStyles();
+  const [checked, setChecked] = React.useState([1]);
+
+  const handleToggle = (value) => () => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setChecked(newChecked);
+  };
+
+  
+  const [showNewTask, setShowNewTask] = useState(false);
+
+  const lowPriority = "#66ff66";
+  const mediumPriority = "#ffff99";
+  const highPriority = "#ff6666";
+  const time = "09:00";
+
+  return (
+    <List dense className={classes.root}>
+      <h3 style={{ marginBottom: "3px" }}> Today's tasks: </h3>
+      {tasks.map((task) => {
+        const labelId = `checkbox-list-secondary-label-${task}`;
+        return (
+          <ListItem key={task} button>
+            <InfoIcon
+              style={{ color: `${lowPriority}`, marginRight: "10px" }}
+            />
+            <ListItemText id={labelId} primary={`${task} (${time})`} />
+            <ListItemSecondaryAction>
+              <Checkbox
+                edge="end"
+                onChange={handleToggle(task)}
+                checked={checked.indexOf(task) !== -1}
+                inputProps={{ "aria-labelledby": labelId }}
+              />
+            </ListItemSecondaryAction>
+          </ListItem>
+        );
+      })}
+    </List>
+  );
+}
+
+export default CheckboxListSecondary */
