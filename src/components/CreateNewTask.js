@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -42,61 +43,85 @@ const BootstrapInput = withStyles((theme) => ({
   }
 }))(InputBase);
 
-const useStyles = makeStyles(() => ({
-  margin: {
-    margin: "3px"
-  }
-}));
+const addTaskForm = ({ onAdd }) => {
+  const [description, setDescription] = useState("");
+  const [time, setTime] = useState("");
+  const [priority, setPriority] = useState("");
 
-export default function CustomizedSelects() {
-  const classes = useStyles();
-  const [priority, setAge] = React.useState("");
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const onSubmit = (t) => {
+    t.preventDefault();
+
+    onAdd({ description, time, priority });
+
+    setDescription("");
+    setTime("");
+    setPriority("");
   };
 
   return (
-    <Box display="flex">
-      <FormControl className={classes.margin} style={{ marginright: "5px" }}>
-        <InputLabel htmlFor="demo-customized-textbox">Descrição</InputLabel>
-        <BootstrapInput id="demo-customized-textbox" />
-      </FormControl>
+    //descricao | prioridade | horas
+    <Box display="flex" style={{ marginTop: "5px" }}>
+      <form onSubmit={onSubmit}>
+        <div className="FormControl" style={{ marginRight: "10px" }}>
+          <InputLabel htmlFor="demo-customized-textbox">Descrição</InputLabel>
+          <BootstrapInput
+            style={{ width: "300px" }}
+            id="demo-customized-textbox"
+            value={description}
+            onChange={(t) => setDescription(t.target.value)}
+          />
+        </div>
 
-      <FormControl className={classes.margin} style={{ marginright: "5px" }}>
-        <InputLabel id="demo-customized-select-label">Prioridade</InputLabel>
-        <Select
-          style={{ width: "100px" }}
-          labelId="demo-customized-select-label"
-          id="demo-customized-select"
-          value={priority}
-          onChange={handleChange}
-          input={<BootstrapInput />}
-          InputLabelProps={{
-            shrink: true
-          }}
-        >
-          <MenuItem value="">
-            <em> ---- </em>
-          </MenuItem>
-          <MenuItem value={1}>Baixa</MenuItem>
-          <MenuItem value={2}>Media</MenuItem>
-          <MenuItem value={3}>Alta</MenuItem>
-        </Select>
-      </FormControl>
+        <Box display="flex">
+          <div
+            className="FormControl"
+            style={{ marginRight: "10px", marginTop: "3px" }}
+          >
+            <InputLabel id="demo-customized-select-label">
+              Prioridade
+            </InputLabel>
+            <Select
+              style={{ width: "100px" }}
+              labelId="demo-customized-select-label"
+              id="demo-customized-select"
+              input={<BootstrapInput />}
+              value={priority}
+              onChange={(t) => setPriority(t.target.value)}
+            >
+              <MenuItem value="">
+                <em> ---- </em>
+              </MenuItem>
+              <MenuItem value={"baixa"}>Baixa</MenuItem>
+              <MenuItem value={"media"}>Media</MenuItem>
+              <MenuItem value={"alta"}>Alta</MenuItem>
+            </Select>
+          </div>
 
-      <FormControl className={classes.container} noValidate>
-        <TextField
-          style={{ marginTop: "10px", marginLeft: "5px" }}
-          id="time"
-          label="Horas"
-          type="time"
-          defaultValue="09:00"
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true
-          }}
+          <div className="FormControl">
+            <TextField
+              style={{ marginTop: "22px", marginLeft: "5px" }}
+              id="time"
+              label="Horas"
+              type="time"
+              defaultValue="09:00"
+              value={time}
+              onChange={(t) => setTime(t.target.value)}
+              InputLabelProps={{
+                shrink: true
+              }}
+            />
+          </div>
+        </Box>
+
+        <input
+          type="submit"
+          style={{ marginTop: "15px", width: "110px" }}
+          value="Save"
+          className="btn btn-block"
         />
-      </FormControl>
+      </form>
     </Box>
   );
-}
+};
+
+export default addTaskForm;

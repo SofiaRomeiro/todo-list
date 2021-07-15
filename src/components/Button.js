@@ -7,7 +7,7 @@ const Button = ({ bcolor, tcolor, onAdd, AddOrSave }) => {
       onClick={onAdd}
       className="btn"
     >
-      {AddOrSave ? "Save Task" : "Add New Task"}
+      {AddOrSave ? "Close Form" : "Add Task"}
     </button>
   );
 };
