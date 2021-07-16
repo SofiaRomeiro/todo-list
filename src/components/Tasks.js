@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import { makeStyles } from "@material-ui/styles";
 import Task from "./Task.js";
 
 const DisplayTasks = ({ tasks, onDelete }) => {

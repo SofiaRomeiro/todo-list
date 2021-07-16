@@ -1,5 +1,5 @@
-import "./styles.css";
-import { useState, useEffect } from "react";
+import "./index.css";
+import { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 import Header from "./components/Header";
