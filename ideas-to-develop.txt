@@ -1,0 +1,13 @@
+FEATURES TO ADD:
+
+- Language change;
+
+- Show per priority;
+
+- Add dates;
+
+- Add a weekly display;
+
+- Edit a task;
+
+

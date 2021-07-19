@@ -26,7 +26,7 @@ const AddTaskForm = ({ onAdd }) => {
     <Box display="flex" style={{ marginTop: "5px" }}>
       <form onSubmit={onSubmit}>
         <div className="FormControl" style={{ marginRight: "10px" }}>
-          <InputLabel htmlFor="demo-customized-textbox">Descrição</InputLabel>
+          <InputLabel htmlFor="demo-customized-textbox">Description</InputLabel>
           <textarea
             style={{ width: "400px", borderRadius:"2px", height:"40px", borderColor:"lightgrey", padding:"10px" }}
             value={description}
@@ -40,7 +40,7 @@ const AddTaskForm = ({ onAdd }) => {
             style={{ marginRight: "10px", marginTop: "3px" }}
           >
             <InputLabel id="demo-customized-select-label">
-              Prioridade
+              Priority
             </InputLabel>
             <Select
               style={{ width: "100px", height:"50px" }}
@@ -49,9 +49,9 @@ const AddTaskForm = ({ onAdd }) => {
               value={priority}
               onChange={(t) => setPriority(t.target.value)}
             >
-              <MenuItem value={"baixa"}>Baixa</MenuItem>
-              <MenuItem value={"media"}>Media</MenuItem>
-              <MenuItem value={"alta"}>Alta</MenuItem>
+              <MenuItem value={"baixa"}>Low</MenuItem>
+              <MenuItem value={"media"}>Medium</MenuItem>
+              <MenuItem value={"alta"}>High</MenuItem>
             </Select>
           </div>        
 
@@ -60,7 +60,7 @@ const AddTaskForm = ({ onAdd }) => {
               <TextField
                 style={{ marginTop: "22px", marginLeft: "5px"  }}
                 id="time"
-                label="Horas"
+                label="Hours"
                 type="time"
                 value={time}
                 onChange={(t) => setTime(t.target.value)}

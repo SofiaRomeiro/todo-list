@@ -51,7 +51,7 @@ const App = () => {
         {tasksList.length > 0 ? (
           <Tasks tasks={tasksList} onDelete={deleteTask} setTask={handleCheckbox} />
         ) : (
-          <p> Sem tarefas por fazer :) </p>
+          <p> No tasks to show :) </p>
         )}
 
         <Divider
