@@ -5,25 +5,31 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 
-const Task = ({ task, onDelete, index }) => {
-  return (
-    <Grid>
-      <Grid item xs={12} md={6}>
-        <div>
-          <List>
-            <ListItem>
-              <ListItemText
-                key={task.id}
-                primary={task.description}
-                secondary={task.time + "  (" + task.priority + ")"}
-              />
-              <Checkbox key={index} onClick={() => onDelete(task.id)} />
-            </ListItem>
-          </List>
-        </div>
-      </Grid>
-    </Grid>
-  );
+const Task = ({ task, onDelete, index, setTask }) => {
+
+
+    return (
+        <Grid>
+            <Grid item xs={12} md={6}>
+                <div>
+                    <List>
+                        <ListItem>
+                            <ListItemText
+                                key={task.id}
+                                primary={task.description}
+                                secondary={task.time + "  (" + task.priority + ")"}
+                            />
+                            <Checkbox
+                                checked={task.isDone}
+                                key={index}
+                                onClick={() => setTask(index)}
+                            />
+                        </ListItem>
+                    </List>
+                </div>
+            </Grid>
+        </Grid>
+    );
 };
 
 export default Task;
