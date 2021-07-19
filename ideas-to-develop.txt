@@ -10,4 +10,7 @@ FEATURES TO ADD:
 
 - Edit a task;
 
+- Fazer verificações no que toca aos dados inseridos;
+
+
 

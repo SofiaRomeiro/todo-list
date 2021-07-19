@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 import Header from "./components/Header";
+import LanguageSwitcher from "./LanguageSwitcher";
 import TrashButton from "./components/TrashButton";
 import DisplayDoneTasks from "./components/DisplayDoneTasks";
 import NewTask from "./components/CreateNewTask";
