@@ -5,7 +5,7 @@ const DisplayTasks = ({ tasks, onDelete, setTask }) => {
     return (
         <>
             {tasks.map((task, index) => (
-                <Task key={index} task={task} onDelete={onDelete} setTask={setTask} index={index} />
+                <Task key={index} task={task} onDelete={onDelete} setTask={setTask} index={index} tasksList={tasks} />
             ))}
         </>
     );

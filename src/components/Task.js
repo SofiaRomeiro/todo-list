@@ -5,7 +5,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 
-const Task = ({ task, onDelete, index, setTask }) => {
+const Task = ({ task, onDelete, index, setTask, tasksList }) => {
 
 
     return (
@@ -22,7 +22,11 @@ const Task = ({ task, onDelete, index, setTask }) => {
                             <Checkbox
                                 checked={task.isDone}
                                 key={index}
-                                onClick={() => setTask(index)}
+                                onClick={() => {
+                                    setTask(index, tasksList);
+                                    onDelete(task, task.id);                               
+                                    }
+                                }
                             />
                         </ListItem>
                     </List>
