@@ -15,7 +15,7 @@ const AddTaskForm = ({ onAdd }) => {
   const onSubmit = (t) => {
     t.preventDefault();
 
-    onAdd({ description, time, priority });
+    onAdd({ description, time, priority, isDone: false });
 
     setDescription("");
     setTime("");

@@ -22,13 +22,20 @@ const App = () => {
     setTasksList(tasksList.filter((task) => task.id !== id));
   };
 
+  const handleCheckbox = (index) => {
+    const temp = [...tasksList];
+    temp[index].isDone = !temp[index].isDone; 
+
+    setTasksList(temp);
+  }
+
   return (
     <Router>
       <div className="container">
         <Header />
 
         {tasksList.length > 0 ? (
-          <Tasks tasks={tasksList} onDelete={deleteTask} />
+          <Tasks tasks={tasksList} onDelete={deleteTask} setTask={handleCheckbox} />
         ) : (
           <p> Sem tarefas por fazer :) </p>
         )}
