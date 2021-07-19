@@ -5,7 +5,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
-import TimePicker from 'react-time-picker'
 
 const AddTaskForm = ({ onAdd }) => {
   const [description, setDescription] = useState("");
