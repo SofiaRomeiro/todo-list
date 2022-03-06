@@ -5631,8 +5631,8 @@
 
 "follow-redirects@^1.0.0":
   "integrity" "sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg=="
-  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.1.tgz"
-  "version" "1.14.1"
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.8.tgz"
+  "version" "1.14.8"
 
 "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
